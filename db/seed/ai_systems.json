@@ -1,0 +1,39 @@
+{
+  "_about": [
+    "The estate under governance. Each system is chosen so that a different",
+    "part of the graph lights up: a conversational assistant, an Annex III",
+    "high-risk screener, and a retrieval system with a data-governance surface."
+  ],
+  "systems": [
+    {
+      "key": "support-chat",
+      "name": "Customer Support Assistant",
+      "description": "Conversational AI answering customer questions, with a Bedrock guardrail, PII redaction and an escalation path to a human agent.",
+      "provider": "aws",
+      "environment": "prod",
+      "risk_tier": "limited",
+      "owner": "VB",
+      "endpoint_url": ""
+    },
+    {
+      "key": "cv-screener",
+      "name": "CV Screening Assistant",
+      "description": "Ranks job applicants against a role specification. Employment screening is EU AI Act Annex III high-risk, so Articles 9-15 genuinely apply: this is the system that makes most of the EU half of the graph real rather than hypothetical.",
+      "provider": "aws",
+      "environment": "prod",
+      "risk_tier": "high_risk",
+      "owner": "VB",
+      "endpoint_url": ""
+    },
+    {
+      "key": "doc-rag",
+      "name": "Policy Document Assistant",
+      "description": "Retrieval-augmented assistant over an internal policy corpus, exercising data provenance, retrieval logging and corpus access control.",
+      "provider": "aws",
+      "environment": "staging",
+      "risk_tier": "limited",
+      "owner": "VB",
+      "endpoint_url": ""
+    }
+  ]
+}

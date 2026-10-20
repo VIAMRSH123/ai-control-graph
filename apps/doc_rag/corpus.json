@@ -1,0 +1,35 @@
+{
+  "_about": "Small internal-policy corpus. Each document carries its own provenance so the assistant can cite not just the text but where the text came from and when.",
+  "documents": [
+    {
+      "id": "POL-001",
+      "title": "Acceptable use of AI systems",
+      "provenance": {"owner": "AI Governance", "approved": "2026-03-02", "review_due": "2027-03-02"},
+      "text": "Staff may use approved AI systems for drafting, summarisation and analysis. Output must be reviewed by the person relying on it before it is used in a decision affecting a customer, an employee or a candidate. Personal data must not be pasted into any system not listed in the approved register."
+    },
+    {
+      "id": "POL-002",
+      "title": "Incident reporting",
+      "provenance": {"owner": "Security", "approved": "2026-01-19", "review_due": "2027-01-19"},
+      "text": "Suspected incidents must be reported to the security team within four hours of discovery. Where an incident involves an AI system producing harmful or discriminatory output, the AI governance lead must also be informed, and a serious incident assessment started within 24 hours."
+    },
+    {
+      "id": "POL-003",
+      "title": "Log retention",
+      "provenance": {"owner": "Platform", "approved": "2026-05-11", "review_due": "2027-05-11"},
+      "text": "Application and inference logs are retained for 180 days. Logs containing personal data are redacted at write time; raw prompt text is never stored, only a SHA-256 digest of the input. Retention below 180 days requires sign-off from the AI governance lead."
+    },
+    {
+      "id": "POL-004",
+      "title": "Human oversight of automated decisions",
+      "provenance": {"owner": "AI Governance", "approved": "2026-04-07", "review_due": "2027-04-07"},
+      "text": "No automated system may issue a final decision about a person. A named individual must record the decision and may disregard, override or reverse any model output. Reviewers are trained on automation bias and on the documented limitations of the system they oversee."
+    },
+    {
+      "id": "POL-005",
+      "title": "Training data provenance",
+      "provenance": {"owner": "Data", "approved": "2026-02-24", "review_due": "2027-02-24"},
+      "text": "Datasets used to develop or tune a model must record their origin, the licence under which they were obtained, the date of acquisition and any transformations applied. Datasets lacking a recorded origin may not be used for systems classified as high risk."
+    }
+  ]
+}
