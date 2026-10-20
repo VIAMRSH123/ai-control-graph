@@ -1,0 +1,71 @@
+ref,kind,objective,title,paraphrase
+4.1,clause,,Understanding the organization and its context,The organisation determines external and internal issues relevant to its purpose that affect its ability to achieve the intended outcomes of the AI management system including its role as AI provider or AI user.
+4.2,clause,,Understanding the needs and expectations of interested parties,The organisation determines the interested parties relevant to the AI management system and their relevant requirements.
+4.3,clause,,Determining the scope of the AI management system,The boundaries and applicability of the AI management system are determined and documented.
+4.4,clause,,AI management system,The organisation establishes implements maintains and continually improves an AI management system including the processes needed and their interactions.
+5.1,clause,,Leadership and commitment,Top management demonstrates leadership and commitment with respect to the AI management system.
+5.2,clause,,AI policy,Top management establishes an AI policy appropriate to the purpose of the organisation that provides a framework for setting AI objectives and commits to continual improvement.
+5.3,clause,,"Roles, responsibilities and authorities",Top management ensures that responsibilities and authorities for relevant roles are assigned and communicated.
+6.1.1,clause,,Actions to address risks and opportunities - general,When planning the AI management system the organisation considers the issues and requirements identified and determines the risks and opportunities that need to be addressed.
+6.1.2,clause,,AI risk assessment,The organisation defines and applies an AI risk assessment process that establishes risk criteria identifies analyses and evaluates AI risks and produces consistent valid and comparable results.
+6.1.3,clause,,AI risk treatment,The organisation defines and applies an AI risk treatment process to select treatment options determine necessary controls and produce a Statement of Applicability.
+6.1.4,clause,,AI system impact assessment,The organisation defines a process to assess the potential consequences of AI systems for individuals groups and societies throughout the system life cycle.
+6.2,clause,,AI objectives and planning to achieve them,AI objectives are established at relevant functions and levels consistent with the AI policy measurable monitored and updated as appropriate.
+6.3,clause,,Planning of changes,Changes to the AI management system are carried out in a planned manner.
+7.1,clause,,Resources,The organisation determines and provides the resources needed for the AI management system.
+7.2,clause,,Competence,The organisation determines the necessary competence of persons affecting AI performance and ensures they are competent on the basis of education training or experience.
+7.3,clause,,Awareness,Persons doing work under the organisation's control are aware of the AI policy their contribution to the AI management system and the implications of not conforming.
+7.4,clause,,Communication,The organisation determines the internal and external communications relevant to the AI management system including what when with whom and how to communicate.
+7.5.1,clause,,Documented information - general,The AI management system includes documented information required by the standard and determined by the organisation as necessary for effectiveness.
+7.5.2,clause,,Creating and updating documented information,Documented information is appropriately identified described formatted reviewed and approved.
+7.5.3,clause,,Control of documented information,Documented information is available where needed and adequately protected including control of distribution access retrieval storage retention and disposition.
+8.1,clause,,Operational planning and control,The organisation plans implements and controls the processes needed to meet requirements and to implement the actions determined in planning.
+8.2,clause,,AI risk assessment,The organisation performs AI risk assessments at planned intervals and when significant changes are proposed or occur and retains documented information on the results.
+8.3,clause,,AI risk treatment,The organisation implements the AI risk treatment plan and retains documented information of the results.
+8.4,clause,,AI system impact assessment,The organisation performs AI system impact assessments at planned intervals and retains documented information on the results.
+9.1,clause,,"Monitoring, measurement, analysis and evaluation",The organisation determines what needs to be monitored and measured the methods to be used and when monitoring measuring analysis and evaluation are performed.
+9.2.1,clause,,Internal audit - general,The organisation conducts internal audits at planned intervals to determine whether the AI management system conforms to requirements and is effectively implemented and maintained.
+9.2.2,clause,,Internal audit programme,An audit programme is planned established implemented and maintained including frequency methods responsibilities and reporting.
+9.3.1,clause,,Management review - general,Top management reviews the AI management system at planned intervals to ensure its continuing suitability adequacy and effectiveness.
+9.3.2,clause,,Management review inputs,The management review considers the status of prior actions changes in issues and requirements AI performance audit results and opportunities for improvement.
+9.3.3,clause,,Management review results,The results of the management review include decisions related to continual improvement opportunities and any need for changes to the AI management system.
+10.1,clause,,Continual improvement,The organisation continually improves the suitability adequacy and effectiveness of the AI management system.
+10.2,clause,,Nonconformity and corrective action,When a nonconformity occurs the organisation reacts to it evaluates the need for action to eliminate its causes implements action and reviews effectiveness.
+A.2.2,annex_a,A.2,AI policy,The organisation documents an AI policy that is approved by management and establishes the organisation's intentions and direction for responsible development and use of AI.
+A.2.3,annex_a,A.2,Alignment with other organizational policies,The AI policy is aligned with other organisational policies such as information security privacy quality and safety so that requirements do not conflict.
+A.2.4,annex_a,A.2,Review of the AI policy,The AI policy is reviewed at planned intervals or when significant changes occur to ensure continuing suitability adequacy and effectiveness.
+A.3.2,annex_a,A.3,AI roles and responsibilities,Roles and responsibilities for AI are defined and allocated across the organisation including accountability for AI system outcomes.
+A.3.3,annex_a,A.3,Reporting of concerns,A mechanism is provided for personnel and other interested parties to report concerns about the organisation's AI systems.
+A.4.2,annex_a,A.4,Resource documentation,The organisation identifies and documents the resources required for activities at each AI system life cycle stage.
+A.4.3,annex_a,A.4,Data resources,Data resources used for AI systems are documented including their characteristics and intended role.
+A.4.4,annex_a,A.4,Tooling resources,Tooling resources used in the development and operation of AI systems are documented.
+A.4.5,annex_a,A.4,System and computing resources,System and computing resources used for AI systems are documented including infrastructure needed across the life cycle.
+A.4.6,annex_a,A.4,Human resources,Human resources and the competences required for AI activities are documented including specialist skills.
+A.5.2,annex_a,A.5,AI system impact assessment process,A process is established to assess the potential consequences of AI systems for individuals groups and society throughout the life cycle.
+A.5.3,annex_a,A.5,Documentation of AI system impact assessments,The results of AI system impact assessments are documented and retained.
+A.5.4,annex_a,A.5,Assessing AI system impact on individuals and groups of individuals,The potential impacts of the AI system on individuals and groups of individuals are assessed including impacts on health safety and fundamental rights.
+A.5.5,annex_a,A.5,Assessing societal impacts of AI systems,The potential broader societal impacts of AI systems are assessed including environmental economic and social effects.
+A.6.1.2,annex_a,A.6,Objectives for responsible development of AI system,Objectives for the responsible development of AI systems are defined and documented.
+A.6.1.3,annex_a,A.6,Processes for responsible design and development of AI systems,Processes for the responsible design and development of AI systems are defined and implemented.
+A.6.2.2,annex_a,A.6,AI system requirements and specification,Requirements for the AI system are specified including functional performance and trustworthiness requirements.
+A.6.2.3,annex_a,A.6,Documentation of AI system design and development,The design and development of the AI system is documented including design decisions and their rationale.
+A.6.2.4,annex_a,A.6,AI system verification and validation,Verification and validation measures for the AI system are defined and performed and the results documented.
+A.6.2.5,annex_a,A.6,AI system deployment,A deployment plan is defined and requirements are met before the AI system is deployed into operational use.
+A.6.2.6,annex_a,A.6,AI system operation and monitoring,The AI system is operated and monitored in accordance with defined requirements including ongoing performance monitoring after deployment.
+A.6.2.7,annex_a,A.6,AI system technical documentation,Technical documentation for the AI system is produced and maintained for relevant interested parties.
+A.6.2.8,annex_a,A.6,AI system recording of event logs,The AI system automatically records event logs during its operation and logs are retained for a defined period.
+A.7.2,annex_a,A.7,Data for development and enhancement of AI system,The organisation defines and documents the data management process for data used to develop and enhance AI systems.
+A.7.3,annex_a,A.7,Acquisition of data,Data acquired for AI systems is obtained in accordance with defined requirements including legal and contractual constraints.
+A.7.4,annex_a,A.7,Quality of data for AI systems,The quality of data used in AI systems is defined assessed and maintained including relevance representativeness and accuracy.
+A.7.5,annex_a,A.7,Data provenance,The provenance of data used in AI systems is recorded and maintained including origin and transformations applied.
+A.7.6,annex_a,A.7,Data preparation,Data preparation methods applied to data used in AI systems are defined and documented.
+A.8.2,annex_a,A.8,System documentation and information for users,Documentation is provided to users of the AI system so they can understand its capabilities limitations and appropriate use.
+A.8.3,annex_a,A.8,External reporting,A capability is provided for interested parties to report adverse impacts of the AI system externally.
+A.8.4,annex_a,A.8,Communication of incidents,A process is defined for communicating AI system incidents to relevant interested parties.
+A.8.5,annex_a,A.8,Information for interested parties,Information about the AI system is made available to interested parties as appropriate to their role and needs.
+A.9.2,annex_a,A.9,Processes for responsible use of AI systems,Processes for the responsible use of AI systems are defined and implemented.
+A.9.3,annex_a,A.9,Objectives for responsible use of AI system,Objectives for the responsible use of the AI system are defined and documented.
+A.9.4,annex_a,A.9,Intended use of the AI system,The intended use of the AI system is defined and the system is used in accordance with that intended use and its documented limitations.
+A.10.2,annex_a,A.10,Allocating responsibilities,Responsibilities are allocated between the organisation and third parties across the AI system life cycle.
+A.10.3,annex_a,A.10,Suppliers,Requirements are established for suppliers of AI systems components or services and supplier conformance is assessed.
+A.10.4,annex_a,A.10,Customers,The organisation's responsibilities to customers of its AI systems are defined including information provided to them.

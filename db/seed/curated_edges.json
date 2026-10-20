@@ -1,0 +1,236 @@
+{
+  "_about": [
+    "Edges that cannot be imported from a published crosswalk and cannot be",
+    "derived from concept overlap. Three kinds live here:",
+    "",
+    "  T2_REGULATORY  the EU AI Act Art. 40 presumption of conformity. Legally",
+    "                 operative. Exactly one exists today.",
+    "  T5_CURATED     expert mappings a concept tagger will not reliably find,",
+    "                 each with a written rationale and a named author.",
+    "  divergences    pairs that address the same subject and CANNOT substitute",
+    "                 for one another. Propagation refuses to cross these.",
+    "",
+    "Structural (T3) edges are generated mechanically by the loader from the",
+    "shared Annex SL clause numbering and are not listed here."
+  ],
+
+  "extra_frameworks": [
+    {
+      "key": "en18286",
+      "name": "EN 18286:2026 — Quality management system for providers of high-risk AI systems",
+      "version": "2026",
+      "authority": "CEN-CENELEC JTC 21",
+      "legal_status": "harmonised_standard",
+      "jurisdiction": "EU",
+      "citation_url": "https://www.cencenelec.eu/news-events/news/2026/en-in-the-spotlight/2026-10-15-en-18286-2026-published-in-ojeu/",
+      "text_reusable": false,
+      "notes": "Cited in the Official Journal by Commission Implementing Decision (EU) 2026/2274 on 14 October 2026 — the first and currently only harmonised standard under the EU AI Act. Represented here at document level rather than clause level because its clause list is not publicly available. That is enough to make the Article 40 mechanism explicit in the graph.",
+      "nodes": [
+        {
+          "ref": "EN 18286:2026",
+          "title": "Quality management system for providers of high-risk AI systems",
+          "statement": "European harmonised standard specifying quality management system requirements for providers of high-risk AI systems, developed by CEN-CENELEC JTC 21 under the Commission's standardisation request supporting Regulation (EU) 2024/1689."
+        }
+      ]
+    }
+  ],
+
+  "regulatory_edges": [
+    {
+      "src": { "framework": "en18286", "ref": "EN 18286:2026" },
+      "dst": { "framework": "eu_ai_act", "ref": "Art.17" },
+      "edge_type": "grants_presumption_of_conformity",
+      "strength": 1.0,
+      "confidence": 1.0,
+      "rationale": "Conformity with EN 18286:2026 confers a presumption of conformity with the Article 17 quality management system obligation, under Article 40, to the extent the standard covers that requirement. The presumption runs from the date the reference was published in the Official Journal, not from CEN-CENELEC publication, and is rebuttable.",
+      "source_citation": "Commission Implementing Decision (EU) 2026/2274, OJ 14 October 2026",
+      "created_by": "human:VB"
+    }
+  ],
+
+  "curated_edges": [
+    {
+      "src": { "framework": "eu_ai_act", "ref": "Art.12" },
+      "dst": { "framework": "iso42001", "ref": "A.6.2.8" },
+      "edge_type": "supports",
+      "strength": 0.9,
+      "confidence": 0.9,
+      "rationale": "Both require the AI system itself to automatically record event logs across its operational lifetime. The ISO control is the implementation practice; the Article is the legal obligation.",
+      "source_citation": "Art.12(1); ISO/IEC 42001:2023 A.6.2.8",
+      "created_by": "human:VB"
+    },
+    {
+      "src": { "framework": "eu_ai_act", "ref": "Art.12" },
+      "dst": { "framework": "iso27001", "ref": "A.8.15" },
+      "edge_type": "supports",
+      "strength": 0.7,
+      "confidence": 0.85,
+      "rationale": "A.8.15 Logging establishes the generic capability to produce, store, protect and analyse logs. Art.12 requires AI-specific logging on top of it. A conforming ISO 27001 logging control is necessary but not sufficient for Art.12 — it says nothing about recording the events that matter for AI risk.",
+      "source_citation": "Art.12; ISO/IEC 27001:2022 A.8.15",
+      "created_by": "human:VB"
+    },
+    {
+      "src": { "framework": "eu_ai_act", "ref": "Art.19" },
+      "dst": { "framework": "iso27001", "ref": "A.5.33" },
+      "edge_type": "supports",
+      "strength": 0.65,
+      "confidence": 0.8,
+      "rationale": "Art.19 sets a six-month minimum retention for automatically generated logs. A.5.33 Protection of records covers protecting retained records from loss, falsification and unauthorised access — the safeguarding half of the same obligation, without the retention period.",
+      "source_citation": "Art.19(1); ISO/IEC 27001:2022 A.5.33",
+      "created_by": "human:VB"
+    },
+    {
+      "src": { "framework": "eu_ai_act", "ref": "Art.15" },
+      "dst": { "framework": "iso27001", "ref": "A.8.8" },
+      "edge_type": "partially_satisfies",
+      "strength": 0.6,
+      "confidence": 0.8,
+      "rationale": "Art.15 requires resilience against attacks exploiting model-specific vulnerabilities — data poisoning, adversarial examples, model evasion. A.8.8 covers technical vulnerability management for conventional software. It addresses part of the cybersecurity requirement and none of the model-specific attack surface.",
+      "source_citation": "Art.15(5); ISO/IEC 27001:2022 A.8.8",
+      "created_by": "human:VB"
+    },
+    {
+      "src": { "framework": "eu_ai_act", "ref": "Art.15" },
+      "dst": { "framework": "iso27001", "ref": "A.8.24" },
+      "edge_type": "supports",
+      "strength": 0.55,
+      "confidence": 0.75,
+      "rationale": "Cryptographic protection contributes to the cybersecurity limb of Art.15, principally for protecting model weights and training data at rest and in transit.",
+      "source_citation": "Art.15(5); ISO/IEC 27001:2022 A.8.24",
+      "created_by": "human:VB"
+    },
+    {
+      "src": { "framework": "eu_ai_act", "ref": "Art.10" },
+      "dst": { "framework": "iso27001", "ref": "A.5.34" },
+      "edge_type": "informs",
+      "strength": 0.5,
+      "confidence": 0.7,
+      "rationale": "Where training data contains personal data, the PII protection control bears on the lawfulness of the data governance Art.10 requires. The relationship is conditional on the data containing PII, which is why it is 'informs' and not 'supports'.",
+      "source_citation": "Art.10; ISO/IEC 27001:2022 A.5.34",
+      "created_by": "human:VB"
+    },
+    {
+      "src": { "framework": "eu_ai_act", "ref": "Art.14" },
+      "dst": { "framework": "iso42001", "ref": "A.9.2" },
+      "edge_type": "supports",
+      "strength": 0.75,
+      "confidence": 0.8,
+      "rationale": "Processes for responsible use of AI systems are the organisational vehicle through which the human oversight Art.14 demands is actually operated. ISO frames it as a use process; the Act frames it as a design property of the system plus a deployer duty.",
+      "source_citation": "Art.14; ISO/IEC 42001:2023 A.9.2",
+      "created_by": "human:VB"
+    },
+    {
+      "src": { "framework": "eu_ai_act", "ref": "Art.73" },
+      "dst": { "framework": "iso27001", "ref": "A.5.26" },
+      "edge_type": "supports",
+      "strength": 0.6,
+      "confidence": 0.8,
+      "rationale": "Incident response procedures provide the mechanism for the serious-incident reporting Art.73 requires, but the Act adds a statutory recipient (market surveillance authorities) and a 15-day deadline that A.5.26 does not contemplate.",
+      "source_citation": "Art.73(2); ISO/IEC 27001:2022 A.5.26",
+      "created_by": "human:VB"
+    },
+    {
+      "src": { "framework": "eu_ai_act", "ref": "Art.11" },
+      "dst": { "framework": "iso42001", "ref": "A.6.2.7" },
+      "edge_type": "supports",
+      "strength": 0.8,
+      "confidence": 0.85,
+      "rationale": "AI system technical documentation under ISO is the practice that produces what Art.11 requires, though Art.11 additionally prescribes minimum contents through Annex IV.",
+      "source_citation": "Art.11(1); ISO/IEC 42001:2023 A.6.2.7",
+      "created_by": "human:VB"
+    },
+    {
+      "src": { "framework": "eu_ai_act", "ref": "Art.72" },
+      "dst": { "framework": "iso42001", "ref": "A.6.2.6" },
+      "edge_type": "supports",
+      "strength": 0.8,
+      "confidence": 0.85,
+      "rationale": "AI system operation and monitoring is the operational practice underlying the post-market monitoring system Art.72 requires providers to establish and document.",
+      "source_citation": "Art.72(1); ISO/IEC 42001:2023 A.6.2.6",
+      "created_by": "human:VB"
+    },
+    {
+      "src": { "framework": "eu_ai_act", "ref": "Art.9" },
+      "dst": { "framework": "iso42001", "ref": "6.1.2" },
+      "edge_type": "supports",
+      "strength": 0.8,
+      "confidence": 0.85,
+      "rationale": "ISO 42001's AI risk assessment process provides the method; Art.9 mandates a lifecycle-spanning risk management system with it. Art.9 additionally requires that residual risk be judged acceptable, which ISO leaves to the organisation's own criteria.",
+      "source_citation": "Art.9(2); ISO/IEC 42001:2023 6.1.2",
+      "created_by": "human:VB"
+    },
+    {
+      "src": { "framework": "eu_ai_act", "ref": "Art.50" },
+      "dst": { "framework": "iso42001", "ref": "A.8.2" },
+      "edge_type": "partially_satisfies",
+      "strength": 0.55,
+      "confidence": 0.75,
+      "rationale": "System documentation and information for users covers telling users what the system is and does. Art.50 requires specifically that a person be informed they are interacting with an AI system, and that synthetic output be machine-readably marked — neither follows from A.8.2 alone.",
+      "source_citation": "Art.50(1)-(2); ISO/IEC 42001:2023 A.8.2",
+      "created_by": "human:VB"
+    },
+    {
+      "src": { "framework": "eu_ai_act", "ref": "Art.26" },
+      "dst": { "framework": "iso42001", "ref": "A.9.4" },
+      "edge_type": "supports",
+      "strength": 0.75,
+      "confidence": 0.8,
+      "rationale": "Both bind use of the system to its defined intended purpose. Art.26 places that duty on the deployer specifically, a role distinction ISO 42001 does not draw as sharply.",
+      "source_citation": "Art.26(1); ISO/IEC 42001:2023 A.9.4",
+      "created_by": "human:VB"
+    },
+    {
+      "src": { "framework": "iso42001", "ref": "A.7.5" },
+      "dst": { "framework": "eu_ai_act", "ref": "Art.10" },
+      "edge_type": "supports",
+      "strength": 0.7,
+      "confidence": 0.8,
+      "rationale": "Data provenance recording is a precondition for demonstrating the data governance and origin requirements of Art.10(2).",
+      "source_citation": "ISO/IEC 42001:2023 A.7.5; Art.10(2)",
+      "created_by": "human:VB"
+    },
+    {
+      "src": { "framework": "iso27001", "ref": "A.8.16" },
+      "dst": { "framework": "nist_ai_rmf", "ref": "MANAGE 4.1" },
+      "edge_type": "supports",
+      "strength": 0.6,
+      "confidence": 0.75,
+      "rationale": "Monitoring activities supply the detection capability that post-deployment AI monitoring depends on, though MANAGE 4.1 is concerned with model behaviour and drift rather than security anomalies.",
+      "source_citation": "ISO/IEC 27001:2022 A.8.16; NIST AI RMF MANAGE 4.1",
+      "created_by": "human:VB"
+    }
+  ],
+
+  "divergences": [
+    {
+      "src": { "framework": "iso42001", "ref": "4.4" },
+      "dst": { "framework": "eu_ai_act", "ref": "Art.40" },
+      "edge_type": "diverges_from",
+      "strength": 1.0,
+      "confidence": 1.0,
+      "rationale": "ISO/IEC 42001 is an international standard, not a European harmonised one, and its reference is not cited in the Official Journal. Operating a conforming AI management system therefore triggers no presumption of conformity under Article 40. This edge exists so that ISO 42001 evidence can never propagate into EU AI Act conformity coverage — the single most dangerous false claim this tool could make.",
+      "source_citation": "Art.40(1); CEN-CENELEC JTC 21 position that international standards require adaptation to AI Act requirements",
+      "created_by": "human:VB"
+    },
+    {
+      "src": { "framework": "iso42001", "ref": "9.2.2" },
+      "dst": { "framework": "eu_ai_act", "ref": "Art.43" },
+      "edge_type": "diverges_from",
+      "strength": 1.0,
+      "confidence": 0.95,
+      "rationale": "An internal audit programme is self-assessment by the organisation. Article 43 conformity assessment is a prescribed legal procedure, in defined cases requiring a notified body. Internal audit evidence must never read as conformity assessment evidence.",
+      "source_citation": "Art.43; ISO/IEC 42001:2023 9.2.2",
+      "created_by": "human:VB"
+    },
+    {
+      "src": { "framework": "nist_ai_rmf", "ref": "MAP 1.5" },
+      "dst": { "framework": "eu_ai_act", "ref": "Art.6" },
+      "edge_type": "diverges_from",
+      "strength": 1.0,
+      "confidence": 0.9,
+      "rationale": "NIST derives risk level contextually from the organisation's own documented risk tolerance. Article 6 assigns high-risk status by use-case classification rules and the Annex III list, irrespective of the provider's risk appetite. A documented NIST risk tolerance says nothing about whether a system is legally high-risk, and must not be propagated as if it did.",
+      "source_citation": "NIST AI RMF MAP 1.5; Art.6 and Annex III",
+      "created_by": "human:VB"
+    }
+  ]
+}

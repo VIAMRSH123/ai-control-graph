@@ -1,0 +1,1470 @@
+{
+  "_about": [
+    "The concept vocabulary that cross-framework edges are derived from.",
+    "",
+    "Top-level concepts are NIST AI RMF's seven trustworthiness characteristics,",
+    "taken from NIST's own crosswalk document, plus one addition: management-system,",
+    "which covers the organisational machinery (policy, audit, review, competence)",
+    "that the trustworthiness characteristics do not describe but that both ISO",
+    "standards are largely made of. That addition is ours and is marked as such.",
+    "",
+    "`patterns` are case-insensitive regexes matched against a control's title and",
+    "statement to assign the concept. They are deterministic and reviewable, so the",
+    "graph builds with no API key and the same input always yields the same tags.",
+    "An LLM pass can refine these afterwards; it is not required to produce a graph."
+  ],
+  "concepts": [
+    {
+      "key": "valid-reliable",
+      "label": "Valid and Reliable",
+      "definition": "The system performs as intended, accurately and consistently, and this is demonstrated through testing and measurement.",
+      "parent": null,
+      "source": "NIST AI RMF trustworthiness characteristic"
+    },
+    {
+      "key": "safe",
+      "label": "Safe",
+      "definition": "The system does not, under defined conditions, lead to a state endangering human life, health, property or the environment.",
+      "parent": null,
+      "source": "NIST AI RMF trustworthiness characteristic"
+    },
+    {
+      "key": "secure-resilient",
+      "label": "Secure and Resilient",
+      "definition": "The system withstands adverse events and unauthorised interference, and maintains confidentiality, integrity and availability.",
+      "parent": null,
+      "source": "NIST AI RMF trustworthiness characteristic"
+    },
+    {
+      "key": "accountable-transparent",
+      "label": "Accountable and Transparent",
+      "definition": "Information about the system is available to those who need it, and responsibility for its outcomes is assigned and traceable.",
+      "parent": null,
+      "source": "NIST AI RMF trustworthiness characteristic"
+    },
+    {
+      "key": "explainable-interpretable",
+      "label": "Explainable and Interpretable",
+      "definition": "The mechanism and the meaning of the system's output can be described and understood in context.",
+      "parent": null,
+      "source": "NIST AI RMF trustworthiness characteristic"
+    },
+    {
+      "key": "privacy-enhanced",
+      "label": "Privacy-Enhanced",
+      "definition": "Personal data is safeguarded through anonymity, confidentiality and control over its collection and use.",
+      "parent": null,
+      "source": "NIST AI RMF trustworthiness characteristic"
+    },
+    {
+      "key": "fair-bias-managed",
+      "label": "Fair with Harmful Bias Managed",
+      "definition": "Harmful bias and discriminatory outcomes are identified, measured and managed across affected groups.",
+      "parent": null,
+      "source": "NIST AI RMF trustworthiness characteristic"
+    },
+    {
+      "key": "management-system",
+      "label": "Management System",
+      "definition": "The organisational machinery that establishes, operates and improves governance: policy, roles, competence, audit, review and corrective action.",
+      "parent": null,
+      "source": "Added here. Not a NIST trustworthiness characteristic, but the bulk of both ISO standards describes it."
+    },
+    {
+      "key": "policy-governance",
+      "label": "Policy and governance",
+      "parent": "management-system",
+      "definition": "Establishing, approving, communicating and reviewing policies.",
+      "patterns": [
+        [
+          "\\bpolic(y|ies)\\b",
+          0.9
+        ],
+        [
+          "topic-specific polic",
+          0.7
+        ],
+        [
+          "\\bapproved by management\\b",
+          0.5
+        ],
+        [
+          "mission and relevant goals",
+          0.7
+        ],
+        [
+          "objectives (for|are established)",
+          0.6
+        ],
+        [
+          "strategic",
+          0.5
+        ]
+      ]
+    },
+    {
+      "key": "roles-responsibilities",
+      "label": "Roles and responsibilities",
+      "parent": "management-system",
+      "definition": "Assigning and communicating accountability for outcomes.",
+      "patterns": [
+        [
+          "roles? and responsibilit",
+          0.9
+        ],
+        [
+          "responsibilit(y|ies) (are|is) (defined|allocated|assigned)",
+          0.8
+        ],
+        [
+          "segregation of duties",
+          0.7
+        ],
+        [
+          "accountab",
+          0.5
+        ],
+        [
+          "allocating responsibilities",
+          0.9
+        ],
+        [
+          "authorities",
+          0.4
+        ],
+        [
+          "executive leadership",
+          0.85
+        ],
+        [
+          "takes responsibility",
+          0.7
+        ],
+        [
+          "terms and conditions of employment",
+          0.7
+        ],
+        [
+          "contractual agreements state",
+          0.7
+        ]
+      ]
+    },
+    {
+      "key": "competence-training",
+      "label": "Competence and training",
+      "parent": "management-system",
+      "definition": "Ensuring people have the skills and training their role requires.",
+      "patterns": [
+        [
+          "\\bcompetenc",
+          0.9
+        ],
+        [
+          "\\btraining\\b",
+          0.8
+        ],
+        [
+          "awareness",
+          0.6
+        ],
+        [
+          "\\bskills?\\b",
+          0.5
+        ],
+        [
+          "education",
+          0.6
+        ],
+        [
+          "human resources",
+          0.5
+        ]
+      ]
+    },
+    {
+      "key": "management-review",
+      "label": "Management review",
+      "parent": "management-system",
+      "definition": "Top management reviewing the system's suitability and effectiveness.",
+      "patterns": [
+        [
+          "management review",
+          0.95
+        ],
+        [
+          "top management",
+          0.6
+        ],
+        [
+          "leadership and commitment",
+          0.7
+        ]
+      ]
+    },
+    {
+      "key": "internal-audit",
+      "label": "Internal audit",
+      "parent": "management-system",
+      "definition": "Independent internal verification of conformity.",
+      "patterns": [
+        [
+          "internal audit",
+          0.95
+        ],
+        [
+          "audit programme",
+          0.9
+        ],
+        [
+          "independent review",
+          0.7
+        ],
+        [
+          "audit test",
+          0.6
+        ]
+      ]
+    },
+    {
+      "key": "continual-improvement",
+      "label": "Continual improvement",
+      "parent": "management-system",
+      "definition": "Improving the system over time, including from failures.",
+      "patterns": [
+        [
+          "continual(ly)? improv",
+          0.95
+        ],
+        [
+          "corrective action",
+          0.85
+        ],
+        [
+          "nonconformit",
+          0.85
+        ],
+        [
+          "learning from",
+          0.7
+        ],
+        [
+          "opportunit(y|ies) for improvement",
+          0.7
+        ]
+      ]
+    },
+    {
+      "key": "risk-assessment",
+      "label": "Risk assessment",
+      "parent": "management-system",
+      "definition": "Identifying, analysing and evaluating risk.",
+      "patterns": [
+        [
+          "risk assessment",
+          0.95
+        ],
+        [
+          "identif(y|ies|ied).{0,30}risks?",
+          0.7
+        ],
+        [
+          "risk criteria",
+          0.8
+        ],
+        [
+          "analyse.{0,20}risk",
+          0.7
+        ],
+        [
+          "risk management system",
+          0.85
+        ],
+        [
+          "risks? and opportunities",
+          0.6
+        ]
+      ]
+    },
+    {
+      "key": "risk-treatment",
+      "label": "Risk treatment",
+      "parent": "management-system",
+      "definition": "Selecting and applying measures that modify risk.",
+      "patterns": [
+        [
+          "risk treatment",
+          0.95
+        ],
+        [
+          "statement of applicability",
+          0.8
+        ],
+        [
+          "mitigat",
+          0.6
+        ],
+        [
+          "risk tolerance",
+          0.7
+        ],
+        [
+          "residual risk",
+          0.8
+        ],
+        [
+          "risk management measures",
+          0.8
+        ],
+        [
+          "actions determined in planning",
+          0.6
+        ]
+      ]
+    },
+    {
+      "key": "impact-assessment",
+      "label": "Impact assessment",
+      "parent": "management-system",
+      "definition": "Assessing consequences of the system for people and society.",
+      "patterns": [
+        [
+          "impact assessment",
+          0.95
+        ],
+        [
+          "impacts? (on|of|to) individuals",
+          0.9
+        ],
+        [
+          "fundamental rights",
+          0.8
+        ],
+        [
+          "potential consequences",
+          0.7
+        ]
+      ]
+    },
+    {
+      "key": "third-party-management",
+      "label": "Third party and supplier management",
+      "parent": "management-system",
+      "definition": "Managing risk arising from suppliers, customers and the supply chain.",
+      "patterns": [
+        [
+          "suppl(y|ier)",
+          0.9
+        ],
+        [
+          "third[- ]part",
+          0.9
+        ],
+        [
+          "\\bcustomers?\\b",
+          0.7
+        ],
+        [
+          "outsourc",
+          0.8
+        ],
+        [
+          "supply chain",
+          0.85
+        ],
+        [
+          "cloud services",
+          0.6
+        ]
+      ]
+    },
+    {
+      "key": "resource-management",
+      "label": "Resource management",
+      "parent": "management-system",
+      "definition": "Identifying and documenting the resources an AI system requires.",
+      "patterns": [
+        [
+          "resources?\\b",
+          0.6
+        ],
+        [
+          "computing resources",
+          0.85
+        ],
+        [
+          "tooling resources",
+          0.9
+        ],
+        [
+          "capacity management",
+          0.7
+        ]
+      ]
+    },
+    {
+      "key": "documentation-control",
+      "label": "Documented information control",
+      "parent": "management-system",
+      "definition": "Controlling creation, availability, retention and disposition of documents.",
+      "patterns": [
+        [
+          "documented information",
+          0.9
+        ],
+        [
+          "control of document",
+          0.9
+        ],
+        [
+          "documentation keeping",
+          0.85
+        ],
+        [
+          "retain(ed|s)? document",
+          0.7
+        ],
+        [
+          "operating procedures",
+          0.6
+        ]
+      ]
+    },
+    {
+      "key": "change-management",
+      "label": "Change management",
+      "parent": "management-system",
+      "definition": "Controlling changes to systems and configurations.",
+      "patterns": [
+        [
+          "change management",
+          0.95
+        ],
+        [
+          "changes to",
+          0.6
+        ],
+        [
+          "substantial(ly)? modif",
+          0.8
+        ],
+        [
+          "configuration management",
+          0.7
+        ],
+        [
+          "planning of changes",
+          0.8
+        ],
+        [
+          "installation of software",
+          0.8
+        ],
+        [
+          "operational systems",
+          0.6
+        ]
+      ]
+    },
+    {
+      "key": "compliance-obligations",
+      "label": "Legal and regulatory obligations",
+      "parent": "management-system",
+      "definition": "Identifying and meeting legal, regulatory and contractual requirements.",
+      "patterns": [
+        [
+          "legal|statutory|regulatory",
+          0.85
+        ],
+        [
+          "contractual requirement",
+          0.8
+        ],
+        [
+          "conformity assessment",
+          0.8
+        ],
+        [
+          "declaration of conformity",
+          0.85
+        ],
+        [
+          "\\bCE marking\\b",
+          0.9
+        ],
+        [
+          "register.{0,20}(in the EU database|themselves)",
+          0.8
+        ],
+        [
+          "intellectual property",
+          0.7
+        ],
+        [
+          "copyright",
+          0.7
+        ],
+        [
+          "competent authorit",
+          0.7
+        ]
+      ]
+    },
+    {
+      "key": "asset-inventory",
+      "label": "Asset and system inventory",
+      "parent": "management-system",
+      "definition": "Knowing what systems and assets exist and who owns them.",
+      "patterns": [
+        [
+          "inventory",
+          0.95
+        ],
+        [
+          "inventory of .{0,30}assets",
+          0.85
+        ],
+        [
+          "scope of the",
+          0.5
+        ],
+        [
+          "context of the organization",
+          0.6
+        ],
+        [
+          "external and internal issues",
+          0.8
+        ],
+        [
+          "interested parties relevant",
+          0.6
+        ],
+        [
+          "\\bscope\\b",
+          0.6
+        ],
+        [
+          "application scope",
+          0.8
+        ],
+        [
+          "categoriz",
+          0.6
+        ],
+        [
+          "acceptable use of (information|assets)",
+          0.8
+        ],
+        [
+          "return of assets",
+          0.8
+        ],
+        [
+          "organisational assets",
+          0.7
+        ],
+        [
+          "handling (information|of information)",
+          0.6
+        ]
+      ]
+    },
+    {
+      "key": "verification-validation",
+      "label": "Verification and validation",
+      "parent": "valid-reliable",
+      "definition": "Demonstrating the system meets its requirements before and during use.",
+      "patterns": [
+        [
+          "verification and validation",
+          0.95
+        ],
+        [
+          "\\bvalidat",
+          0.8
+        ],
+        [
+          "\\bverif",
+          0.75
+        ],
+        [
+          "acceptance",
+          0.5
+        ],
+        [
+          "TEVV",
+          0.9
+        ]
+      ]
+    },
+    {
+      "key": "testing-evaluation",
+      "label": "Testing and evaluation",
+      "parent": "valid-reliable",
+      "definition": "Structured testing and measurement of system behaviour.",
+      "patterns": [
+        [
+          "\\btest(ing|ed|s)?\\b",
+          0.75
+        ],
+        [
+          "evaluat",
+          0.7
+        ],
+        [
+          "\\bmetrics?\\b",
+          0.8
+        ],
+        [
+          "measurement",
+          0.7
+        ],
+        [
+          "benchmark",
+          0.7
+        ],
+        [
+          "test information",
+          0.7
+        ]
+      ]
+    },
+    {
+      "key": "accuracy-performance",
+      "label": "Accuracy and performance",
+      "parent": "valid-reliable",
+      "definition": "Declared accuracy levels and consistent performance.",
+      "patterns": [
+        [
+          "accuracy",
+          0.95
+        ],
+        [
+          "\\bperformance\\b",
+          0.7
+        ],
+        [
+          "reliab",
+          0.8
+        ],
+        [
+          "consistently",
+          0.5
+        ],
+        [
+          "requirements and specification",
+          0.6
+        ]
+      ]
+    },
+    {
+      "key": "data-quality",
+      "label": "Data quality",
+      "parent": "valid-reliable",
+      "definition": "Relevance, representativeness, completeness and correctness of data.",
+      "patterns": [
+        [
+          "quality of data|data quality",
+          0.95
+        ],
+        [
+          "training, validation and testing",
+          0.85
+        ],
+        [
+          "(?<!authorised )(?<!authorized )representative(ness)?\\b",
+          0.8
+        ],
+        [
+          "free of errors",
+          0.85
+        ],
+        [
+          "data preparation",
+          0.8
+        ],
+        [
+          "acquisition of data",
+          0.8
+        ],
+        [
+          "data resources",
+          0.7
+        ],
+        [
+          "data governance",
+          0.9
+        ],
+        [
+          "data management",
+          0.75
+        ]
+      ]
+    },
+    {
+      "key": "human-oversight",
+      "label": "Human oversight",
+      "parent": "safe",
+      "definition": "Effective oversight by people who can interpret, override or stop the system.",
+      "patterns": [
+        [
+          "human oversight",
+          0.95
+        ],
+        [
+          "overseen by",
+          0.9
+        ],
+        [
+          "human[- ]in[- ]the[- ]loop",
+          0.9
+        ],
+        [
+          "disregard, override",
+          0.9
+        ],
+        [
+          "intervene|interrupt",
+          0.8
+        ],
+        [
+          "automation bias",
+          0.85
+        ],
+        [
+          "human-machine interface",
+          0.8
+        ],
+        [
+          "human-AI configuration",
+          0.8
+        ]
+      ]
+    },
+    {
+      "key": "incident-management",
+      "label": "Incident management",
+      "parent": "safe",
+      "definition": "Detecting, responding to, reporting and learning from incidents.",
+      "patterns": [
+        [
+          "incident",
+          0.9
+        ],
+        [
+          "serious incident",
+          0.95
+        ],
+        [
+          "security event",
+          0.8
+        ],
+        [
+          "event reporting",
+          0.8
+        ],
+        [
+          "respon(se|d) to",
+          0.5
+        ]
+      ]
+    },
+    {
+      "key": "operational-monitoring",
+      "label": "Operation and post-market monitoring",
+      "parent": "safe",
+      "definition": "Monitoring the system in production, including after deployment.",
+      "patterns": [
+        [
+          "post-market monitoring",
+          0.95
+        ],
+        [
+          "operation and monitoring",
+          0.95
+        ],
+        [
+          "monitor(ed|ing|s)?\\b",
+          0.7
+        ],
+        [
+          "in production",
+          0.8
+        ],
+        [
+          "deployed",
+          0.5
+        ],
+        [
+          "decommission",
+          0.85
+        ],
+        [
+          "phasing out",
+          0.8
+        ],
+        [
+          "operational planning and control",
+          0.8
+        ],
+        [
+          "responsible use",
+          0.8
+        ],
+        [
+          "responsible development",
+          0.8
+        ]
+      ]
+    },
+    {
+      "key": "business-continuity",
+      "label": "Continuity and availability",
+      "parent": "safe",
+      "definition": "Maintaining operation and recovering from disruption.",
+      "patterns": [
+        [
+          "business continuity",
+          0.95
+        ],
+        [
+          "disruption",
+          0.85
+        ],
+        [
+          "redundancy",
+          0.85
+        ],
+        [
+          "\\bbackup\\b",
+          0.9
+        ],
+        [
+          "availability",
+          0.6
+        ],
+        [
+          "supporting utilities",
+          0.7
+        ]
+      ]
+    },
+    {
+      "key": "access-control",
+      "label": "Access control",
+      "parent": "secure-resilient",
+      "definition": "Restricting who and what can reach information and systems.",
+      "patterns": [
+        [
+          "access control",
+          0.95
+        ],
+        [
+          "access rights",
+          0.9
+        ],
+        [
+          "privileged access",
+          0.9
+        ],
+        [
+          "identity management",
+          0.85
+        ],
+        [
+          "access restriction",
+          0.9
+        ],
+        [
+          "unauthorised access",
+          0.7
+        ],
+        [
+          "physical entry",
+          0.7
+        ],
+        [
+          "privileged utility",
+          0.9
+        ],
+        [
+          "override system and application controls",
+          0.85
+        ]
+      ]
+    },
+    {
+      "key": "authentication",
+      "label": "Authentication",
+      "parent": "secure-resilient",
+      "definition": "Establishing and protecting proof of identity.",
+      "patterns": [
+        [
+          "authentication",
+          0.95
+        ],
+        [
+          "\\bcredential",
+          0.8
+        ],
+        [
+          "\\bMFA\\b|multi-factor",
+          0.9
+        ]
+      ]
+    },
+    {
+      "key": "cryptography",
+      "label": "Cryptography and encryption",
+      "parent": "secure-resilient",
+      "definition": "Use of cryptography and key management to protect information.",
+      "patterns": [
+        [
+          "cryptograph",
+          0.95
+        ],
+        [
+          "encrypt",
+          0.95
+        ],
+        [
+          "key management",
+          0.9
+        ]
+      ]
+    },
+    {
+      "key": "vulnerability-management",
+      "label": "Vulnerability and patch management",
+      "parent": "secure-resilient",
+      "definition": "Finding and remediating technical weaknesses.",
+      "patterns": [
+        [
+          "vulnerabilit",
+          0.95
+        ],
+        [
+          "\\bmalware\\b",
+          0.85
+        ],
+        [
+          "threat intelligence",
+          0.85
+        ],
+        [
+          "\\bpatch",
+          0.8
+        ],
+        [
+          "web filtering",
+          0.6
+        ]
+      ]
+    },
+    {
+      "key": "network-security",
+      "label": "Network and infrastructure security",
+      "parent": "secure-resilient",
+      "definition": "Securing networks, services and segregation between them.",
+      "patterns": [
+        [
+          "network",
+          0.85
+        ],
+        [
+          "segregation of network",
+          0.95
+        ],
+        [
+          "\\bendpoint",
+          0.8
+        ],
+        [
+          "physical security",
+          0.8
+        ],
+        [
+          "\\bcabling\\b",
+          0.8
+        ],
+        [
+          "\\bperimeter",
+          0.8
+        ],
+        [
+          "remote working",
+          0.8
+        ],
+        [
+          "off(-| )premises",
+          0.7
+        ],
+        [
+          "secure areas",
+          0.85
+        ],
+        [
+          "equipment (siting|maintenance)",
+          0.8
+        ],
+        [
+          "physical and environmental threats",
+          0.85
+        ],
+        [
+          "\\bpremises\\b",
+          0.6
+        ]
+      ]
+    },
+    {
+      "key": "secure-development",
+      "label": "Secure development",
+      "parent": "secure-resilient",
+      "definition": "Building software securely across the development lifecycle.",
+      "patterns": [
+        [
+          "secure (development|coding|system)",
+          0.95
+        ],
+        [
+          "development life ?cycle",
+          0.9
+        ],
+        [
+          "source code",
+          0.85
+        ],
+        [
+          "separation of development",
+          0.85
+        ],
+        [
+          "application security",
+          0.85
+        ],
+        [
+          "security testing",
+          0.85
+        ],
+        [
+          "project management",
+          0.7
+        ],
+        [
+          "classifiers, generative models",
+          0.85
+        ],
+        [
+          "tasks and methods",
+          0.7
+        ],
+        [
+          "design and development",
+          0.75
+        ]
+      ]
+    },
+    {
+      "key": "adversarial-robustness",
+      "label": "Adversarial robustness",
+      "parent": "secure-resilient",
+      "definition": "Resistance to attacks that target the model itself.",
+      "patterns": [
+        [
+          "adversarial",
+          0.95
+        ],
+        [
+          "data poisoning|model poisoning",
+          0.95
+        ],
+        [
+          "model evasion",
+          0.95
+        ],
+        [
+          "\\brobust",
+          0.8
+        ],
+        [
+          "resilien",
+          0.75
+        ],
+        [
+          "red[- ]team",
+          0.9
+        ],
+        [
+          "prompt injection",
+          0.9
+        ]
+      ]
+    },
+    {
+      "key": "record-keeping",
+      "label": "Record keeping",
+      "parent": "accountable-transparent",
+      "definition": "Retaining records of what the system did, for a defined period.",
+      "patterns": [
+        [
+          "record[- ]keeping",
+          0.95
+        ],
+        [
+          "protection of records",
+          0.9
+        ],
+        [
+          "\\brecords?\\b",
+          0.7
+        ],
+        [
+          "retain|retention",
+          0.75
+        ],
+        [
+          "at least six months",
+          0.9
+        ],
+        [
+          "ten years",
+          0.8
+        ]
+      ]
+    },
+    {
+      "key": "logging",
+      "label": "Logging",
+      "parent": "accountable-transparent",
+      "definition": "Automatic recording of events over the system's lifetime.",
+      "patterns": [
+        [
+          "\\blogs?\\b|logging",
+          0.95
+        ],
+        [
+          "event logs",
+          0.95
+        ],
+        [
+          "automatic(ally)? record",
+          0.9
+        ],
+        [
+          "audit trail",
+          0.9
+        ],
+        [
+          "clock synchroni",
+          0.6
+        ]
+      ]
+    },
+    {
+      "key": "traceability",
+      "label": "Traceability and provenance",
+      "parent": "accountable-transparent",
+      "definition": "Being able to trace outputs, data and decisions back to their origin.",
+      "patterns": [
+        [
+          "provenance",
+          0.95
+        ],
+        [
+          "traceab",
+          0.9
+        ],
+        [
+          "\\borigin\\b",
+          0.7
+        ],
+        [
+          "design decisions",
+          0.6
+        ]
+      ]
+    },
+    {
+      "key": "technical-documentation",
+      "label": "Technical documentation",
+      "parent": "accountable-transparent",
+      "definition": "Documentation describing how the system is built and behaves.",
+      "patterns": [
+        [
+          "technical documentation",
+          0.95
+        ],
+        [
+          "system documentation",
+          0.9
+        ],
+        [
+          "Annex IV",
+          0.9
+        ],
+        [
+          "documentation of AI system",
+          0.9
+        ],
+        [
+          "instructions for use",
+          0.85
+        ]
+      ]
+    },
+    {
+      "key": "user-information",
+      "label": "Information for users and interested parties",
+      "parent": "accountable-transparent",
+      "definition": "Telling deployers, users and affected parties what they need to know.",
+      "patterns": [
+        [
+          "information for (users|interested parties)",
+          0.95
+        ],
+        [
+          "information (for|to|available to) interested parties",
+          0.85
+        ],
+        [
+          "information to deployers",
+          0.9
+        ],
+        [
+          "communicat",
+          0.6
+        ],
+        [
+          "intended (use|purpose)",
+          0.8
+        ],
+        [
+          "information transfer",
+          0.8
+        ],
+        [
+          "transfer rules",
+          0.7
+        ],
+        [
+          "special interest groups",
+          0.7
+        ],
+        [
+          "security forums",
+          0.7
+        ],
+        [
+          "engagement with relevant AI actors",
+          0.8
+        ],
+        [
+          "feedback",
+          0.6
+        ]
+      ]
+    },
+    {
+      "key": "external-reporting",
+      "label": "External reporting and disclosure",
+      "parent": "accountable-transparent",
+      "definition": "Channels for reporting outward, including to authorities and the public.",
+      "patterns": [
+        [
+          "external reporting",
+          0.95
+        ],
+        [
+          "report(ing)? (of )?(serious )?incident",
+          0.9
+        ],
+        [
+          "reporting of concerns",
+          0.9
+        ],
+        [
+          "market surveillance",
+          0.85
+        ],
+        [
+          "publicly available",
+          0.7
+        ],
+        [
+          "contact with authorities",
+          0.8
+        ]
+      ]
+    },
+    {
+      "key": "ai-disclosure",
+      "label": "AI interaction disclosure",
+      "parent": "accountable-transparent",
+      "definition": "Informing people that they are interacting with, or seeing output from, an AI system.",
+      "patterns": [
+        [
+          "informed that they are interacting",
+          0.95
+        ],
+        [
+          "artificially generated|synthetic",
+          0.9
+        ],
+        [
+          "machine-readable format",
+          0.85
+        ],
+        [
+          "marked",
+          0.5
+        ]
+      ]
+    },
+    {
+      "key": "model-explainability",
+      "label": "Model explainability",
+      "parent": "explainable-interpretable",
+      "definition": "Describing the mechanism by which the model produces output.",
+      "patterns": [
+        [
+          "explain",
+          0.9
+        ],
+        [
+          "interpret",
+          0.85
+        ],
+        [
+          "model is explained",
+          0.95
+        ],
+        [
+          "knowledge limits",
+          0.8
+        ]
+      ]
+    },
+    {
+      "key": "pii-protection",
+      "label": "Personal data protection",
+      "parent": "privacy-enhanced",
+      "definition": "Protecting personally identifiable information.",
+      "patterns": [
+        [
+          "\\bPII\\b",
+          0.95
+        ],
+        [
+          "personally identifiable",
+          0.95
+        ],
+        [
+          "privacy",
+          0.9
+        ],
+        [
+          "personal data",
+          0.9
+        ],
+        [
+          "confidentialit",
+          0.7
+        ],
+        [
+          "non-disclosure",
+          0.7
+        ]
+      ]
+    },
+    {
+      "key": "data-minimisation",
+      "label": "Data minimisation, masking and deletion",
+      "parent": "privacy-enhanced",
+      "definition": "Limiting, masking and deleting data when no longer required.",
+      "patterns": [
+        [
+          "data masking",
+          0.95
+        ],
+        [
+          "information deletion",
+          0.95
+        ],
+        [
+          "data leakage",
+          0.9
+        ],
+        [
+          "secure disposal|re-use of equipment",
+          0.85
+        ],
+        [
+          "storage media",
+          0.7
+        ],
+        [
+          "minimis",
+          0.7
+        ],
+        [
+          "labelling of information",
+          0.7
+        ],
+        [
+          "classification scheme",
+          0.6
+        ]
+      ]
+    },
+    {
+      "key": "bias-testing",
+      "label": "Bias testing and fairness evaluation",
+      "parent": "fair-bias-managed",
+      "definition": "Measuring and managing harmful bias in system behaviour.",
+      "patterns": [
+        [
+          "\\bbias(es|ed)?\\b",
+          0.95
+        ],
+        [
+          "fairness|\\bfair\\b",
+          0.9
+        ],
+        [
+          "discriminat",
+          0.9
+        ],
+        [
+          "demographic",
+          0.7
+        ]
+      ]
+    },
+    {
+      "key": "societal-impact",
+      "label": "Societal and environmental impact",
+      "parent": "fair-bias-managed",
+      "definition": "Effects of the system beyond its direct users.",
+      "patterns": [
+        [
+          "societal impact",
+          0.95
+        ],
+        [
+          "environmental impact|sustainability",
+          0.9
+        ],
+        [
+          "affected communities",
+          0.85
+        ],
+        [
+          "broader",
+          0.5
+        ]
+      ]
+    }
+  ]
+}

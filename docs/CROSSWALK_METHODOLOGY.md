@@ -18,7 +18,7 @@ that a reviewer can always see which kind of claim they are looking at.
 |---|---|---|---|---|
 | ISO/IEC 27001 | 2022 | 93 Annex A controls in 4 themes: A.5.1–5.37 organizational, A.6.1–6.8 people, A.7.1–7.14 physical, A.8.1–8.34 technological | Voluntary, certifiable | Copyrighted |
 | ISO/IEC 42001 | 2023 | Clauses 4–10, plus Annex A: 9 control objectives A.2–A.10, ~38 controls | Voluntary, certifiable | Copyrighted |
-| EU AI Act | Reg. (EU) 2024/1689 | Articles. High-risk core is Art. 9–15; provider duties Art. 16–17; deployer duties Art. 26; post-market monitoring Art. 72 | **Binding law** | OJ text, freely reusable |
+| EU AI Act | Reg. (EU) 2024/1689 | Articles. High-risk core is Art. 9–15; provider duties Art. 16–20; deployer duties Art. 26–27; GPAI Art. 53/55; post-market Art. 72–73 | **Binding law** | OJ text, freely reusable |
 | NIST AI RMF | 1.0 (AI 100-1) | 4 functions / 19 categories / 72 subcategories — GOVERN, MAP, MEASURE, MANAGE | Voluntary guidance | US Gov public domain |
 
 ### 1.1 A licensing decision that constrains the data
@@ -27,9 +27,16 @@ ISO standards are sold, not published. Reproducing their normative text in a pub
 repository infringes ISO copyright, regardless of how useful it would be.
 
 So this repository stores, for ISO 27001 and ISO 42001: **the control identifier, the short
-control title as commonly cited, and our own paraphrase of intent.** Nothing more. Full
-normative text for EU AI Act and NIST AI RMF *is* stored verbatim, because both are freely
-reusable.
+control title as commonly cited, and our own paraphrase of intent.** Nothing more.
+
+NIST AI RMF outcome text *is* stored verbatim — it is US Government public domain, and it is
+extracted mechanically from NIST's own crosswalk PDF rather than retyped, so it is exact.
+
+EU AI Act provisions are stored as a **faithful operative statement with a per-article
+citation**, not as verbatim OJ text. The Official Journal text is freely reusable and could be
+stored verbatim; it is not, because reproducing it from memory and labelling it "verbatim"
+would be a false provenance claim in a tool whose whole purpose is provenance. Each provision
+carries a `source_url` to the normative wording.
 
 This is a real constraint with a real consequence: the ontology tagging for ISO controls is
 performed against paraphrases rather than normative text, which caps achievable confidence on

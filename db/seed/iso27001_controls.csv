@@ -1,0 +1,124 @@
+ref,kind,theme,title,paraphrase
+4.1,clause,,Understanding the organization and its context,The organisation determines external and internal issues relevant to its purpose that affect its ability to achieve the intended outcomes of the information security management system.
+4.2,clause,,Understanding the needs and expectations of interested parties,The organisation determines interested parties relevant to the ISMS and their relevant requirements including legal and regulatory requirements.
+4.3,clause,,Determining the scope of the information security management system,The boundaries and applicability of the ISMS are determined and documented.
+4.4,clause,,Information security management system,The organisation establishes implements maintains and continually improves an ISMS including the processes needed and their interactions.
+5.1,clause,,Leadership and commitment,Top management demonstrates leadership and commitment with respect to the information security management system.
+5.2,clause,,Policy,Top management establishes an information security policy appropriate to the purpose of the organisation that includes objectives and a commitment to continual improvement.
+5.3,clause,,"Organizational roles, responsibilities and authorities",Top management ensures that responsibilities and authorities for roles relevant to information security are assigned and communicated.
+6.1.1,clause,,Actions to address risks and opportunities - general,When planning the ISMS the organisation considers the issues and requirements identified and determines the risks and opportunities that need to be addressed.
+6.1.2,clause,,Information security risk assessment,The organisation defines and applies an information security risk assessment process that establishes risk criteria identifies analyses and evaluates risks and produces consistent valid and comparable results.
+6.1.3,clause,,Information security risk treatment,The organisation defines and applies a risk treatment process to select treatment options determine necessary controls and produce a Statement of Applicability.
+6.2,clause,,Information security objectives and planning to achieve them,Information security objectives are established at relevant functions and levels consistent with the policy measurable monitored and updated as appropriate.
+6.3,clause,,Planning of changes,Changes to the information security management system are carried out in a planned manner.
+7.1,clause,,Resources,The organisation determines and provides the resources needed for the information security management system.
+7.2,clause,,Competence,The organisation determines the necessary competence of persons affecting information security performance and ensures they are competent on the basis of education training or experience.
+7.3,clause,,Awareness,Persons doing work under the organisation's control are aware of the information security policy their contribution to the ISMS and the implications of not conforming.
+7.4,clause,,Communication,The organisation determines the internal and external communications relevant to the ISMS including what when with whom and how to communicate.
+7.5.1,clause,,Documented information - general,The ISMS includes documented information required by the standard and determined by the organisation as necessary for effectiveness.
+7.5.2,clause,,Creating and updating documented information,Documented information is appropriately identified described formatted reviewed and approved.
+7.5.3,clause,,Control of documented information,Documented information is available where needed and adequately protected including control of distribution access retrieval storage retention and disposition.
+8.1,clause,,Operational planning and control,The organisation plans implements and controls the processes needed to meet requirements and to implement the actions determined in planning.
+8.2,clause,,Information security risk assessment,The organisation performs information security risk assessments at planned intervals and when significant changes are proposed or occur and retains documented information on the results.
+8.3,clause,,Information security risk treatment,The organisation implements the information security risk treatment plan and retains documented information of the results.
+9.1,clause,,"Monitoring, measurement, analysis and evaluation",The organisation determines what needs to be monitored and measured the methods to be used and when monitoring measuring analysis and evaluation are performed.
+9.2.1,clause,,Internal audit - general,The organisation conducts internal audits at planned intervals to determine whether the ISMS conforms to requirements and is effectively implemented and maintained.
+9.2.2,clause,,Internal audit programme,An audit programme is planned established implemented and maintained including frequency methods responsibilities and reporting.
+9.3.1,clause,,Management review - general,Top management reviews the ISMS at planned intervals to ensure its continuing suitability adequacy and effectiveness.
+9.3.2,clause,,Management review inputs,The management review considers the status of prior actions changes in issues and requirements information security performance audit results and opportunities for improvement.
+9.3.3,clause,,Management review results,The results of the management review include decisions related to continual improvement opportunities and any need for changes to the ISMS.
+10.1,clause,,Continual improvement,The organisation continually improves the suitability adequacy and effectiveness of the information security management system.
+10.2,clause,,Nonconformity and corrective action,When a nonconformity occurs the organisation reacts to it evaluates the need for action to eliminate its causes implements action and reviews effectiveness.
+A.5.1,annex_a,organizational,Policies for information security,Information security policy and topic-specific policies are defined approved by management published and reviewed at planned intervals.
+A.5.2,annex_a,organizational,Information security roles and responsibilities,Security roles and responsibilities are defined and allocated according to organisational needs.
+A.5.3,annex_a,organizational,Segregation of duties,Conflicting duties and areas of responsibility are segregated to reduce opportunity for unauthorised or unintentional modification or misuse.
+A.5.4,annex_a,organizational,Management responsibilities,Management requires all personnel to apply information security in accordance with established policies and procedures.
+A.5.5,annex_a,organizational,Contact with authorities,Appropriate contacts with relevant authorities are established and maintained.
+A.5.6,annex_a,organizational,Contact with special interest groups,Contacts with special interest groups security forums and professional associations are maintained.
+A.5.7,annex_a,organizational,Threat intelligence,Information relating to information security threats is collected and analysed to produce threat intelligence.
+A.5.8,annex_a,organizational,Information security in project management,Information security is integrated into project management regardless of project type.
+A.5.9,annex_a,organizational,Inventory of information and other associated assets,An inventory of information and other associated assets including owners is developed and maintained.
+A.5.10,annex_a,organizational,Acceptable use of information and other associated assets,Rules for acceptable use and procedures for handling information and associated assets are identified documented and implemented.
+A.5.11,annex_a,organizational,Return of assets,Personnel and interested parties return organisational assets on change or termination of employment contract or agreement.
+A.5.12,annex_a,organizational,Classification of information,Information is classified according to confidentiality integrity availability and relevant interested-party requirements.
+A.5.13,annex_a,organizational,Labelling of information,Procedures for labelling information are developed and implemented in accordance with the classification scheme.
+A.5.14,annex_a,organizational,Information transfer,Transfer rules procedures and agreements are in place for all types of transfer facilities.
+A.5.15,annex_a,organizational,Access control,Rules to control physical and logical access to information and associated assets are established and implemented based on business and security requirements.
+A.5.16,annex_a,organizational,Identity management,The full life cycle of identities is managed.
+A.5.17,annex_a,organizational,Authentication information,Allocation and management of authentication information is controlled including advising personnel on appropriate handling.
+A.5.18,annex_a,organizational,Access rights,Access rights to information and associated assets are provisioned reviewed modified and removed in accordance with the access control policy.
+A.5.19,annex_a,organizational,Information security in supplier relationships,Processes and procedures manage the security risks associated with use of supplier products and services.
+A.5.20,annex_a,organizational,Addressing information security within supplier agreements,Relevant security requirements are established and agreed with each supplier based on the type of relationship.
+A.5.21,annex_a,organizational,Managing information security in the ICT supply chain,Processes and procedures manage security risks associated with the ICT product and service supply chain.
+A.5.22,annex_a,organizational,Monitoring review and change management of supplier services,Changes to supplier services are regularly monitored reviewed evaluated and managed.
+A.5.23,annex_a,organizational,Information security for use of cloud services,Processes for acquisition use management and exit from cloud services are established in accordance with security requirements.
+A.5.24,annex_a,organizational,Information security incident management planning and preparation,Incident management is planned and prepared by defining establishing and communicating processes roles and responsibilities.
+A.5.25,annex_a,organizational,Assessment and decision on information security events,Security events are assessed and a decision is taken on whether they are classified as incidents.
+A.5.26,annex_a,organizational,Response to information security incidents,Security incidents are responded to in accordance with documented procedures.
+A.5.27,annex_a,organizational,Learning from information security incidents,Knowledge gained from incidents is used to strengthen and improve controls.
+A.5.28,annex_a,organizational,Collection of evidence,Procedures for identification collection acquisition and preservation of evidence related to security events are established and implemented.
+A.5.29,annex_a,organizational,Information security during disruption,Plans are in place to maintain information security at an appropriate level during disruption.
+A.5.30,annex_a,organizational,ICT readiness for business continuity,ICT readiness is planned implemented maintained and tested based on business continuity objectives and ICT continuity requirements.
+A.5.31,annex_a,organizational,Legal statutory regulatory and contractual requirements,Legal statutory regulatory and contractual requirements relevant to information security and the approach to meet them are identified documented and kept up to date.
+A.5.32,annex_a,organizational,Intellectual property rights,Appropriate procedures protect intellectual property rights.
+A.5.33,annex_a,organizational,Protection of records,Records are protected from loss destruction falsification unauthorised access and unauthorised release.
+A.5.34,annex_a,organizational,Privacy and protection of PII,Requirements for the preservation of privacy and protection of personally identifiable information are identified and met according to applicable law and contractual requirements.
+A.5.35,annex_a,organizational,Independent review of information security,The approach to managing information security and its implementation are reviewed independently at planned intervals or on significant change.
+A.5.36,annex_a,organizational,Compliance with policies rules and standards for information security,Compliance with the organisation's information security policy topic-specific policies rules and standards is regularly reviewed.
+A.5.37,annex_a,organizational,Documented operating procedures,Operating procedures for information processing facilities are documented and made available to personnel who need them.
+A.6.1,annex_a,people,Screening,Background verification checks on candidates are carried out prior to joining and on an ongoing basis proportionate to business requirements and perceived risks.
+A.6.2,annex_a,people,Terms and conditions of employment,Employment contractual agreements state personnel and organisational responsibilities for information security.
+A.6.3,annex_a,people,Information security awareness education and training,Personnel and relevant interested parties receive appropriate awareness education and training and regular updates on policies and procedures relevant to their role.
+A.6.4,annex_a,people,Disciplinary process,A formalised and communicated disciplinary process is in place to take action against personnel and other interested parties who have committed a security policy violation.
+A.6.5,annex_a,people,Responsibilities after termination or change of employment,Information security responsibilities that remain valid after termination or change of employment are defined enforced and communicated.
+A.6.6,annex_a,people,Confidentiality or non-disclosure agreements,Confidentiality or non-disclosure agreements reflecting the organisation's needs are identified documented regularly reviewed and signed.
+A.6.7,annex_a,people,Remote working,Security measures are implemented when personnel work remotely to protect information accessed processed or stored outside the organisation's premises.
+A.6.8,annex_a,people,Information security event reporting,A mechanism is provided for personnel to report observed or suspected security events through appropriate channels in a timely manner.
+A.7.1,annex_a,physical,Physical security perimeters,Security perimeters are defined and used to protect areas containing information and other associated assets.
+A.7.2,annex_a,physical,Physical entry,Secure areas are protected by appropriate entry controls and access points.
+A.7.3,annex_a,physical,Securing offices rooms and facilities,Physical security for offices rooms and facilities is designed and implemented.
+A.7.4,annex_a,physical,Physical security monitoring,Premises are continuously monitored for unauthorised physical access.
+A.7.5,annex_a,physical,Protecting against physical and environmental threats,Protection against physical and environmental threats such as natural disasters and other intentional or unintentional threats is designed and implemented.
+A.7.6,annex_a,physical,Working in secure areas,Security measures for working in secure areas are designed and implemented.
+A.7.7,annex_a,physical,Clear desk and clear screen,Clear desk rules for papers and removable storage media and clear screen rules for information processing facilities are defined and enforced.
+A.7.8,annex_a,physical,Equipment siting and protection,Equipment is sited securely and protected.
+A.7.9,annex_a,physical,Security of assets off-premises,Off-site assets are protected.
+A.7.10,annex_a,physical,Storage media,Storage media are managed through their life cycle of acquisition use transportation and disposal in accordance with the classification scheme and handling requirements.
+A.7.11,annex_a,physical,Supporting utilities,Information processing facilities are protected from power failures and other disruptions caused by failures in supporting utilities.
+A.7.12,annex_a,physical,Cabling security,Cables carrying power data or supporting information services are protected from interception interference or damage.
+A.7.13,annex_a,physical,Equipment maintenance,Equipment is maintained correctly to ensure availability integrity and confidentiality of information.
+A.7.14,annex_a,physical,Secure disposal or re-use of equipment,Items of equipment containing storage media are verified to ensure sensitive data and licensed software are removed or securely overwritten prior to disposal or re-use.
+A.8.1,annex_a,technological,User endpoint devices,Information stored on processed by or accessible via user endpoint devices is protected.
+A.8.2,annex_a,technological,Privileged access rights,The allocation and use of privileged access rights is restricted and managed.
+A.8.3,annex_a,technological,Information access restriction,Access to information and other associated assets is restricted in accordance with the established access control policy.
+A.8.4,annex_a,technological,Access to source code,Read and write access to source code development tools and software libraries is appropriately managed.
+A.8.5,annex_a,technological,Secure authentication,Secure authentication technologies and procedures are implemented based on information access restrictions and the access control policy.
+A.8.6,annex_a,technological,Capacity management,The use of resources is monitored and adjusted in line with current and expected capacity requirements.
+A.8.7,annex_a,technological,Protection against malware,Protection against malware is implemented and supported by appropriate user awareness.
+A.8.8,annex_a,technological,Management of technical vulnerabilities,Information about technical vulnerabilities of information systems in use is obtained exposure to such vulnerabilities is evaluated and appropriate measures are taken.
+A.8.9,annex_a,technological,Configuration management,Configurations including security configurations of hardware software services and networks are established documented implemented monitored and reviewed.
+A.8.10,annex_a,technological,Information deletion,Information stored in information systems devices or other storage media is deleted when no longer required.
+A.8.11,annex_a,technological,Data masking,Data masking is used in accordance with the access control policy and other related policies and business requirements taking applicable legislation into consideration.
+A.8.12,annex_a,technological,Data leakage prevention,Data leakage prevention measures are applied to systems networks and other devices that process store or transmit sensitive information.
+A.8.13,annex_a,technological,Information backup,Backup copies of information software and systems are maintained and regularly tested in accordance with the agreed backup policy.
+A.8.14,annex_a,technological,Redundancy of information processing facilities,Information processing facilities are implemented with redundancy sufficient to meet availability requirements.
+A.8.15,annex_a,technological,Logging,Logs that record activities exceptions faults and other relevant events are produced stored protected and analysed.
+A.8.16,annex_a,technological,Monitoring activities,Networks systems and applications are monitored for anomalous behaviour and appropriate actions are taken to evaluate potential security incidents.
+A.8.17,annex_a,technological,Clock synchronization,The clocks of information processing systems are synchronised to approved time sources.
+A.8.18,annex_a,technological,Use of privileged utility programs,The use of utility programs capable of overriding system and application controls is restricted and tightly controlled.
+A.8.19,annex_a,technological,Installation of software on operational systems,Procedures and measures are implemented to securely manage software installation on operational systems.
+A.8.20,annex_a,technological,Networks security,Networks and network devices are secured managed and controlled to protect information in systems and applications.
+A.8.21,annex_a,technological,Security of network services,Security mechanisms service levels and service requirements of network services are identified implemented and monitored.
+A.8.22,annex_a,technological,Segregation of networks,Groups of information services users and information systems are segregated in the organisation's networks.
+A.8.23,annex_a,technological,Web filtering,Access to external websites is managed to reduce exposure to malicious content.
+A.8.24,annex_a,technological,Use of cryptography,Rules for the effective use of cryptography including cryptographic key management are defined and implemented.
+A.8.25,annex_a,technological,Secure development life cycle,Rules for the secure development of software and systems are established and applied.
+A.8.26,annex_a,technological,Application security requirements,Information security requirements are identified specified and approved when developing or acquiring applications.
+A.8.27,annex_a,technological,Secure system architecture and engineering principles,Principles for engineering secure systems are established documented maintained and applied to information system development activities.
+A.8.28,annex_a,technological,Secure coding,Secure coding principles are applied to software development.
+A.8.29,annex_a,technological,Security testing in development and acceptance,Security testing processes are defined and implemented in the development life cycle.
+A.8.30,annex_a,technological,Outsourced development,The organisation directs monitors and reviews the activities related to outsourced system development.
+A.8.31,annex_a,technological,Separation of development test and production environments,Development testing and production environments are separated and secured.
+A.8.32,annex_a,technological,Change management,Changes to information processing facilities and information systems are subject to change management procedures.
+A.8.33,annex_a,technological,Test information,Test information is appropriately selected protected and managed.
+A.8.34,annex_a,technological,Protection of information systems during audit testing,Audit tests and other assurance activities involving assessment of operational systems are planned and agreed between the tester and appropriate management.
