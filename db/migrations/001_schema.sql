@@ -14,6 +14,20 @@
 -- ============================================================================
 
 -- ---------------------------------------------------------------------------
+-- Idempotent: drop before create, so `make migrate` can be re-run against an
+-- existing database. The seed files are the source of truth and the database
+-- is derived, so rebuilding it is the normal operation, not a recovery step.
+-- ---------------------------------------------------------------------------
+
+DROP VIEW IF EXISTS control_coverage CASCADE;
+DROP VIEW IF EXISTS control_edge_bidirectional CASCADE;
+DROP TABLE IF EXISTS ai_decision, evidence_control_link, evidence, collector_run,
+    ai_system, control_edge, control_concept, concept, control_node,
+    nist_airmf_subcategory, eu_ai_act_provision, iso42001_control,
+    iso27001_control, framework CASCADE;
+DROP TYPE IF EXISTS provenance_tier, edge_type, link_kind, legal_status CASCADE;
+
+-- ---------------------------------------------------------------------------
 -- Enumerations
 -- ---------------------------------------------------------------------------
 

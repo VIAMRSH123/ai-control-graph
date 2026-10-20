@@ -9,6 +9,12 @@ control and immediately surfaces every related control in every other framework.
 289 controls · 428 relationships · 5 frameworks · no graph database
 ```
 
+![ISO 42001 A.6.2.6 and the 18 controls it relates to across four frameworks](docs/img/crosswalk.jpg)
+
+*ISO 42001 A.6.2.6 queried. Solid amber lines are NIST's published crosswalk;
+the blue dotted line to EU AI Act Art.72 is derived through the ontology,
+because no official article-level NIST↔EU mapping exists.*
+
 ---
 
 ## The idea in one example

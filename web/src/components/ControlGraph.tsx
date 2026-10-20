@@ -45,11 +45,20 @@ function layout(related: RelatedControl[], width: number, height: number) {
 
   const total = related.length || 1;
   const placed: Placed[] = [];
+
+  // Sector size is proportional to how many controls a framework contributes,
+  // but floored: without a minimum, a framework with one match next to one with
+  // fifteen gets an arc too narrow to hold its chip, and the two collide.
+  const FULL = Math.PI * 2;
+  const minSpan = Math.min(FULL / groups.length, 0.52);
+  const raw = groups.map((g) => Math.max((g.items.length / total) * FULL, minSpan));
+  const scale = FULL / raw.reduce((sum, value) => sum + value, 0);
+
   // start at the top and sweep clockwise
   let cursor = -Math.PI / 2;
 
-  for (const group of groups) {
-    const span = (group.items.length / total) * (Math.PI * 2);
+  for (const [groupIndex, group] of groups.entries()) {
+    const span = raw[groupIndex] * scale;
     const usable = Math.max(span - SECTOR_GAP, 0.08);
     const start = cursor + SECTOR_GAP / 2;
 
@@ -57,7 +66,12 @@ function layout(related: RelatedControl[], width: number, height: number) {
       // spread within the sector; a lone item sits at its centre
       const t = group.items.length === 1 ? 0.5 : index / (group.items.length - 1);
       const angle = start + usable * t;
-      const radius = RING[Math.min(item.depth, RING.length - 1)];
+      // Stagger radius for crowded sectors. A framework contributing a dozen
+      // controls would otherwise pack them onto one arc and the chips collide;
+      // alternating two radii gives each label room without widening the dial.
+      const crowded = group.items.length > 5;
+      const stagger = crowded ? (index % 2) * 62 : 0;
+      const radius = RING[Math.min(item.depth, RING.length - 1)] + stagger;
       placed.push({
         ...item,
         angle,

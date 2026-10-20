@@ -31,7 +31,7 @@ from pathlib import Path
 PARENT_INHERITANCE = 0.45
 
 #: Below this cosine similarity, two controls are not considered related.
-DEFAULT_SIMILARITY_THRESHOLD = 0.55
+DEFAULT_SIMILARITY_THRESHOLD = 0.50
 
 #: At or above this, the relationship is called equivalence rather than support.
 EQUIVALENCE_THRESHOLD = 0.90

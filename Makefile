@@ -24,7 +24,8 @@ graph:         ## build the control graph from seed files (idempotent)
 seed: migrate graph  ## migrate + build graph
 
 verify:        ## assert graph integrity and propagation behaviour
-	@DATABASE_URL="$(DB)" $(PY) -m pytest tests -q
+	@DATABASE_URL="$(DB)" uv run --quiet --with 'psycopg[binary]' --with pytest \
+		python -m pytest tests -q
 
 clean:
 	@dropdb --if-exists control_graph && createdb control_graph
