@@ -35,3 +35,6 @@ evidence_cache/
 htmlcov/
 playwright-report/
 test-results/
+
+# vite
+web/dist/
