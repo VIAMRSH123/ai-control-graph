@@ -42,7 +42,8 @@ def build(
 
     @app.get("/.well-known/ai-system-card.json")
     def card() -> dict:
-        return system_card(key, name, purpose, risk_tier, oversight, limitations)
+        return system_card(key, name, purpose, risk_tier, oversight,
+                           limitations, route=route, input_field=input_field)
 
     @app.post(route)
     async def handle(request: Request) -> JSONResponse:

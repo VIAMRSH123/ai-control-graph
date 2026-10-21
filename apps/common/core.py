@@ -255,6 +255,7 @@ def run_inference(
 def system_card(
     key: str, name: str, purpose: str, risk_tier: str,
     oversight: str, limitations: list[str],
+    route: str = "/chat", input_field: str = "message",
 ) -> dict[str, Any]:
     """What the system publishes about itself, machine-readably.
 
@@ -266,6 +267,11 @@ def system_card(
         "key": key,
         "purpose": purpose,
         "risk_tier": risk_tier,
+        # How to exercise this system. Declared here so a behavioural probe can
+        # adapt to each application instead of assuming every AI system answers
+        # on /chat -- which is exactly the assumption that made the collector
+        # silently useless against the screener and the retrieval assistant.
+        "interaction": {"route": route, "input_field": input_field},
         "provider": os.environ.get("PROVIDER_NAME", "AI Control Graph demo estate"),
         "model": BEDROCK_MODEL if os.environ.get("USE_BEDROCK", "1") == "1" else MODEL,
         "model_pinned": True,

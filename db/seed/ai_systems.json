@@ -2,7 +2,8 @@
   "_about": [
     "The estate under governance. Each system is chosen so that a different",
     "part of the graph lights up: a conversational assistant, an Annex III",
-    "high-risk screener, and a retrieval system with a data-governance surface."
+    "high-risk screener, and a retrieval system with a data-governance surface.",
+    "Endpoints are the deployed estate at https://ai-control-graph-estate.vercel.app. Each system keeps its own base path, system card and risk tier, and is probed separately."
   ],
   "systems": [
     {
@@ -13,7 +14,7 @@
       "environment": "prod",
       "risk_tier": "limited",
       "owner": "VB",
-      "endpoint_url": ""
+      "endpoint_url": "https://ai-control-graph-estate.vercel.app/support-chat"
     },
     {
       "key": "cv-screener",
@@ -23,7 +24,7 @@
       "environment": "prod",
       "risk_tier": "high_risk",
       "owner": "VB",
-      "endpoint_url": ""
+      "endpoint_url": "https://ai-control-graph-estate.vercel.app/cv-screener"
     },
     {
       "key": "doc-rag",
@@ -33,7 +34,7 @@
       "environment": "staging",
       "risk_tier": "limited",
       "owner": "VB",
-      "endpoint_url": ""
+      "endpoint_url": "https://ai-control-graph-estate.vercel.app/doc-rag"
     }
   ]
 }

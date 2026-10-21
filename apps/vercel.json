@@ -1,0 +1,11 @@
+{
+  "routes": [
+    { "src": "/(.*)", "dest": "/api/index" }
+  ],
+  "env": {
+    "USE_BEDROCK": "0",
+    "PROVIDER_NAME": "AI Control Graph demo estate",
+    "LOG_RETENTION_DAYS": "180",
+    "RATE_LIMIT_PER_MINUTE": "20"
+  }
+}

@@ -1,0 +1,5 @@
+# Runtime for the three governed AI systems on Vercel.
+# boto3 is deliberately absent: the Bedrock path imports it lazily and is off
+# here (USE_BEDROCK=0), and including it would add ~100MB to the function.
+fastapi==0.115.6
+anthropic==0.42.0

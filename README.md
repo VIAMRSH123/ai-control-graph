@@ -5,7 +5,8 @@ the **NIST AI Risk Management Framework**, built as a knowledge graph in
 Postgres — where evidence collected from a live AI system is tagged to **one**
 control and immediately surfaces every related control in every other framework.
 
-**Live: https://ai-control-graph.vercel.app**
+**Live crosswalk: https://ai-control-graph.vercel.app**
+**Live estate (the three governed AI systems): https://ai-control-graph-estate.vercel.app**
 
 ```
 289 controls · 428 relationships · 5 frameworks · no graph database
@@ -107,7 +108,7 @@ sample-data fallback anywhere in the collection path.
 | **Framework content** | ISO 27001 (93 Annex A + 30 clauses), ISO 42001 (38 Annex A + 32 clauses), EU AI Act (23 provisions), NIST AI RMF (72 subcategories, verbatim) |
 | **T1 edges** | parsed from NIST's actual PDF, cached with checksum in [`docs/sources/`](docs/sources/) |
 | **AI applications** | three real services — a support chatbot, an **Annex III high-risk** CV screener, a RAG assistant — with PII redaction, injection refusal, rate limiting and machine-readable system cards |
-| **Evidence** | live GitHub API, live HTTP probes against the running apps, live AWS API calls |
+| **Evidence** | live GitHub API, live HTTP probes against the **deployed** apps, live AWS API calls |
 | **Propagation** | recursive CTEs over the real graph |
 
 When a source is unavailable, the collector says so and is skipped:
@@ -181,8 +182,12 @@ probe    ai_system_card                  -> eu_ai_act Art.13 (+11 propagated)
 probe    ai_disclosure_and_rate_limit    -> eu_ai_act Art.50 (+1 propagated)
 probe    prompt_injection_probe          -> eu_ai_act Art.15 (+3 propagated)
 
-5 artifacts · 5 direct tags · 16 propagated links
+15 artifacts · 15 direct tags · 48 propagated links
 ```
+
+Probes run against the deployed estate, not localhost. Each application
+declares its own route and input field in its system card, and the collector
+reads that rather than assuming every AI system answers on `/chat`.
 
 ---
 
