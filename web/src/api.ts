@@ -106,17 +106,34 @@ export interface AiSystem {
   evidence_count: number;
 }
 
+const API_BASE = import.meta.env.VITE_API_BASE ?? '';
+
+/** With no API configured, the app reads a snapshot exported from Postgres.
+ *  See src/staticGraph.ts. Set VITE_API_BASE to use a live FastAPI instead. */
+export const USING_SNAPSHOT = API_BASE === '';
+
 async function get<T>(path: string): Promise<T> {
-  const response = await fetch(path);
+  const response = await fetch(`${API_BASE}${path}`);
   if (!response.ok) throw new Error(`${response.status} ${path}`);
   return response.json() as Promise<T>;
 }
 
 export const api = {
-  health: () => get<GraphHealth>('/api/health'),
-  search: (q: string) => get<SearchHit[]>(`/api/search?q=${encodeURIComponent(q)}&limit=10`),
-  neighbourhood: (id: number, depth: number, threshold: number) =>
-    get<Neighbourhood>(`/api/control/${id}/neighbourhood?depth=${depth}&threshold=${threshold}`),
+  health: async (): Promise<GraphHealth> =>
+    USING_SNAPSHOT
+      ? (await import('./staticGraph')).staticApi.health()
+      : get<GraphHealth>('/api/health'),
+
+  search: async (q: string): Promise<SearchHit[]> =>
+    USING_SNAPSHOT
+      ? (await import('./staticGraph')).staticApi.search(q)
+      : get<SearchHit[]>(`/api/search?q=${encodeURIComponent(q)}&limit=10`),
+
+  neighbourhood: async (id: number, depth: number, threshold: number): Promise<Neighbourhood> =>
+    USING_SNAPSHOT
+      ? (await import('./staticGraph')).staticApi.neighbourhood(id, depth)
+      : get<Neighbourhood>(`/api/control/${id}/neighbourhood?depth=${depth}&threshold=${threshold}`),
+
   systems: () => get<AiSystem[]>('/api/systems'),
   evidence: (key: string) => get<EvidenceItem[]>(`/api/systems/${key}/evidence`),
   propagation: (id: number) => get<Propagation>(`/api/evidence/${id}/propagation`),
