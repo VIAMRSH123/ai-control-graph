@@ -267,6 +267,24 @@ Stated here rather than left to be discovered:
 
 ---
 
+## Deployment layout — read this before redeploying
+
+Two Vercel projects, both git-linked to **this one repo**. Each must have the
+right Root Directory or a push rebuilds one of them as the other:
+
+| Project | Root Directory | Serves |
+|---|---|---|
+| `ai-control-graph` | *(repo root)* | the crosswalk UI, built by the root `vercel.json` |
+| `ai-control-graph-estate` | **`apps`** | the three governed AI systems |
+
+This bit the project twice. Both projects started with no Root Directory, so
+every `git push` built **both** from the repo root — where the root
+`vercel.json` says "build the web app". The estate kept silently overwriting
+itself with a copy of the crosswalk, and all three applications returned 404
+while every deployment reported success.
+
+If the estate ever serves the crosswalk again, that setting is why.
+
 ## About the hosted demo
 
 <https://ai-control-graph.vercel.app> runs with **no database**.
