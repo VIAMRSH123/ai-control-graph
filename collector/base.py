@@ -106,6 +106,10 @@ class CollectorRun:
         if exc_type is not None:
             self.errors.append({"where": "run", "detail": f"{exc_type.__name__}: {exc}"})
             status = "failed"
+        elif self.errors and self.artifacts_found == 0:
+            # errored and produced nothing: this collector contributed no
+            # evidence, which must not read the same as a clean empty result
+            status = "failed"
         elif self.errors:
             status = "partial"
         else:

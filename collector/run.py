@@ -98,7 +98,17 @@ def main() -> int:
                 continue
 
             with CollectorRun(conn, collector.name, system["id"]) as run:
-                for artifact in collector.collect():
+                # An exception raised while *producing* artifacts -- a network
+                # timeout mid-iteration, say -- must not escape and abandon the
+                # remaining collectors and systems. It degrades this run only.
+                try:
+                    artifacts = list(collector.collect())
+                except Exception as exc:  # noqa: BLE001
+                    run.error(collector.name, f"{type(exc).__name__}: {exc}")
+                    print(f"  {collector.name:8} aborted — {type(exc).__name__}: {exc}")
+                    artifacts = []
+
+                for artifact in artifacts:
                     try:
                         evidence_id = store(conn, run, system["id"], collector.name, artifact)
                         mapping = map_artifact(conn, artifact)
