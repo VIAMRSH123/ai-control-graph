@@ -40,6 +40,12 @@ def build(
     def healthz() -> dict:
         return {"status": "ok", "system": key}
 
+    @app.get("/")
+    def root() -> dict:
+        """Poking at a system's base path should describe it, not 404."""
+        return system_card(key, name, purpose, risk_tier, oversight,
+                           limitations, route=route, input_field=input_field)
+
     @app.get("/.well-known/ai-system-card.json")
     def card() -> dict:
         return system_card(key, name, purpose, risk_tier, oversight,

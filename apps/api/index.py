@@ -36,7 +36,9 @@ if "apps" not in sys.modules:
     sys.modules["apps"] = alias
 
 from fastapi import FastAPI, Request  # noqa: E402
-from fastapi.responses import JSONResponse  # noqa: E402
+from fastapi.responses import HTMLResponse, JSONResponse  # noqa: E402
+
+from apps.common.landing import render  # noqa: E402
 
 from apps.cv_screener.main import app as cv_screener  # noqa: E402
 from apps.doc_rag.main import app as doc_rag  # noqa: E402
@@ -54,28 +56,63 @@ for prefix, sub in SYSTEMS.items():
     app.mount(f"/{prefix}", sub)
 
 
-@app.get("/")
-def index() -> JSONResponse:
-    """An index of the estate, so the deployment is self-describing."""
-    return JSONResponse(
-        {
-            "estate": "ai-control-graph demo estate",
-            "note": (
-                "Three AI systems under governance. Each serves its own system "
-                "card and is probed separately by the evidence collector."
-            ),
-            "systems": {
-                key: {
-                    "base": f"/{key}",
-                    "card": f"/{key}/.well-known/ai-system-card.json",
-                    "health": f"/{key}/healthz",
-                }
-                for key in SYSTEMS
-            },
-            "graph": "https://ai-control-graph.vercel.app",
-            "repo": "https://github.com/VIAMRSH123/ai-control-graph",
-        }
-    )
+GRAPH_URL = "https://ai-control-graph.vercel.app"
+REPO_URL = "https://github.com/VIAMRSH123/ai-control-graph"
+
+
+def _estate() -> dict:
+    """The estate as data, built from each system's own card."""
+    return {
+        "estate": "ai-control-graph demo estate",
+        "note": (
+            "Three AI systems under governance. Each serves its own system "
+            "card and is probed separately by the evidence collector."
+        ),
+        "systems": {
+            key: {
+                "base": f"/{key}",
+                "card": f"/{key}/.well-known/ai-system-card.json",
+                "health": f"/{key}/healthz",
+            }
+            for key in SYSTEMS
+        },
+        "graph": GRAPH_URL,
+        "repo": REPO_URL,
+    }
+
+
+def _cards() -> dict:
+    """Each system's card, read from the app itself rather than restated here."""
+    out = {}
+    for key, sub in SYSTEMS.items():
+        card = {}
+        for route in sub.routes:
+            if getattr(route, "path", "") == "/.well-known/ai-system-card.json":
+                card = route.endpoint()
+                break
+        out[f"/{key}"] = card
+    return out
+
+
+@app.get("/index.json")
+def index_json() -> JSONResponse:
+    """The estate as JSON, for anything that is not a person."""
+    return JSONResponse(_estate())
+
+
+# response_model=None: the return type is a union of Response subclasses, which
+# FastAPI would otherwise try to turn into a Pydantic model and reject
+@app.get("/", response_class=HTMLResponse, response_model=None)
+def index(request: Request) -> HTMLResponse | JSONResponse:
+    """A readable index for people; JSON for clients that ask for it.
+
+    The root is the first thing a reader sees, and raw JSON there is useless to
+    them. Content negotiation keeps both audiences served from one URL.
+    """
+    accept = request.headers.get("accept", "")
+    if "application/json" in accept and "text/html" not in accept:
+        return JSONResponse(_estate())
+    return HTMLResponse(render(_cards(), GRAPH_URL, REPO_URL))
 
 
 @app.get("/healthz")
