@@ -1,0 +1,22 @@
+# This deployment is the static crosswalk UI only.
+#
+# Vercel auto-detects an `api/` directory as Python serverless functions and
+# pulls in boto3, anthropic and psycopg, which blows past the 500 MB function
+# limit. None of it is needed: the published site reads a snapshot exported
+# from Postgres at build time (web/public/graph-snapshot.json).
+#
+# To host the live API instead, deploy it separately and set VITE_API_BASE.
+
+api/
+collector/
+apps/
+graph/
+infra/
+db/
+tests/
+scripts/
+docs/
+*.md
+!web/**
+Makefile
+.env.example

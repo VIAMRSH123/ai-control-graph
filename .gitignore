@@ -39,3 +39,4 @@ test-results/
 # vite
 web/dist/
 infra/.build/
+.vercel

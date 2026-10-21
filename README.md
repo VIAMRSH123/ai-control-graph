@@ -5,6 +5,8 @@ the **NIST AI Risk Management Framework**, built as a knowledge graph in
 Postgres — where evidence collected from a live AI system is tagged to **one**
 control and immediately surfaces every related control in every other framework.
 
+**Live: https://ai-control-graph.vercel.app**
+
 ```
 289 controls · 428 relationships · 5 frameworks · no graph database
 ```
@@ -259,6 +261,26 @@ Stated here rather than left to be discovered:
   demo, both called out in [`infra/README.md`](infra/README.md).
 
 ---
+
+## About the hosted demo
+
+<https://ai-control-graph.vercel.app> runs with **no database**.
+
+The control graph is deterministic reference data rebuilt from the seed files,
+so there is nothing for a database to do per request. `scripts/export_snapshot.py`
+exports nodes, edges and every neighbourhood to a single JSON file — 84 KB
+gzipped — and the page reads that.
+
+The part that matters: **the snapshot is produced by the real SQL.** Every
+neighbourhood comes from `control_neighbourhood()` itself, so the published site
+shows exactly what Postgres produced rather than a traversal reimplemented in
+the browser. The divergence rule travels with it.
+
+What the hosted demo does *not* include: the live collectors, evidence
+propagation against a running estate, and the observability panel — all of which
+need a database and credentials. Evidence coverage shown on the page is frozen
+from the last local collector run and labelled as such. Point the app at a live
+FastAPI instance by setting `VITE_API_BASE` at build time; nothing else changes.
 
 ## Reading order
 
