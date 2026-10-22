@@ -168,6 +168,18 @@ uv run --with 'psycopg[binary]' --with fastapi --with uvicorn \
 cd web && npm install && npm run dev      # http://localhost:5173
 ```
 
+Show the propagation happening, live, on one artifact — a real injection fired
+at the deployed screener, tagged to one control, with the watched controls
+printed before and after:
+
+```bash
+python scripts/demo_propagation.py
+```
+
+It rolls back afterwards, so it can be run repeatedly. Putting
+`PROPAGATION_THRESHOLD=0.6` in front shows the same probe reaching one control
+instead of three.
+
 Collect evidence and watch it spread:
 
 ```bash
